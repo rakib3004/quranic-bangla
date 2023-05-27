@@ -1,35 +1,39 @@
 
 import React from "react";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
-  Image,
 } from "react-native";
+import Display from "./Display";
 
-const App = () => {
-    const cards = [
-      { text: 'নবীদের নিয়ে আয়াত সমূহ' },
-      { text: 'আয়াতুল কুরসি' },
-      {  text: 'সুরা ফাতিহা' },
-      { text: 'আয়াতুল কুরসি' },
-      {  text: '৫ টি দোয়া' },
-    ];
 
-  return (
-    <View style={styles.container}>
-      <Text style={styles.titleText} >Quranic Bangla</Text>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-      {cards.map((item, index) => (
-          <TouchableOpacity key={index} style={styles.button}>
-            <Text style={styles.buttonText}>{item.text}</Text>
-          </TouchableOpacity>
-        ))}
-      </ScrollView>
-    </View>
-  );
+
+const App = () =>{
+  const cards = [
+    { text: 'নবীদের নিয়ে আয়াত সমূহ' },
+    { text: 'আয়াতুল কুরসি' },
+    {  text: 'সুরা ফাতিহা' },
+    { text: 'আয়াতুল কুরসি' },
+    {  text: '৫ টি দোয়া' },
+  ];
+
+return (
+  <View style={styles.container}>
+    <Text style={styles.titleText} >Quranic Bangla</Text>
+    <ScrollView contentContainerStyle={styles.scrollContainer}>
+    {cards.map((item, index) => (
+        <TouchableOpacity key={index} style={styles.button}>
+          <Text style={styles.buttonText}>{item.text}</Text>
+        </TouchableOpacity>
+      ))}
+    </ScrollView>
+  </View>
+);
 };
 export default App;
 const styles = StyleSheet.create({
