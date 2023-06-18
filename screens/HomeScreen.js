@@ -4,46 +4,21 @@ import { Image, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const HomeScreen = () => {
-    const navigation = useNavigation();
-    useLayoutEffect(() => {
+  const navigation = useNavigation();
+  useLayoutEffect(() => {
         navigation.setOptions({
             headerShown: false,
         }, [])
     });
 
-    const navigateToAnotherScreen = (item) =>{
-      if(item.name==="Surah Asor"){
-        navigation.navigate("Surah Asor")
-      }
-      else if(item.name==="Surah Fatiha"){
-        navigation.navigate("Surah Fatiha")
-
-      }
-      else if(item.name==="Ayatul Kursi"){
-        navigation.navigate("Ayatul Kursi")
-
-      }
-      else if(item.name==="Surah Ikhlas"){
-        navigation.navigate("Surah Ikhlas")
-
-      }
-      else if(item.name==="Surah Bakarah"){
-        navigation.navigate("Surah Bakarah")
-
-      }
-      else if(item.name==="Surah Nas"){
-        navigation.navigate("Surah Nas")
-
-      }
-    }
 
     const cardItems = [
       { name: 'Surah Asor', image: require('../public/first.png') },
-      { name: 'Surah Fatiha', image: require('../public/third.png') },
-      { name: 'Ayatul Kursi', image: require('../public/second.png') },
-      { name: 'Surah Ikhlas', image: require('../public/first.png') },
-      { name: 'Surah Bakarah', image: require('../public/second.png') },
-      { name: 'Surah Nas', image: require('../public/third.png') },
+      { name: 'Surah Fatiha', image: require('../public/second.png') },
+      { name: 'Ayatul Kursi', image: require('../public/third.png') },
+      { name: 'Surah Ikhlas', image: require('../public/forth.png') },
+      { name: 'Surah Bakarah', image: require('../public/fifth.png') },
+      { name: 'Surah Nas', image: require('../public/sixth.png') },
     ];
 
 
@@ -66,13 +41,23 @@ return (
   </View>  );
 };
 
-const CardItem = ({ item }) => (
-  <TouchableOpacity onPress={navigateToAnotherScreen(item)}>
+const CardItem = ({ item }) => {
+ 
+  const navigation = useNavigation();
+  const itemName  =  item.name;
+
+  const screenName = itemName.replace(/\s/g, '');
+
+return(
+    <TouchableOpacity onPress={() => navigation.navigate(screenName)}>
       <View className="w-40 h-48  p-4 bg-gray-600  border-1 mr-4 justify-center ">
     <Image source={item.image} className="w-10 h-10 object-cover justify-center rounded-lg" /> 
     <Text className="text-xl text-white font-bold">{item.name}</Text>
   </View>
     </TouchableOpacity>
-  
+
 );
+
+};
+
 export default HomeScreen;

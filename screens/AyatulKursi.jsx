@@ -1,13 +1,21 @@
-import { Text, View } from 'react-native';
+import React, { useLayoutEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { Text, View } from "react-native";
 
-const AyatulKursi = () =>{
-
-    return (
-    <View>
-        <Text>
-            Ayatul Kursi
-        </Text>
-    </View>
+const AyatulKursi = () => {
+    const navigation = useNavigation();
+useLayoutEffect(() => {
+    navigation.setOptions(
+      {
+        headerShown: false,
+      },
+      []
     );
-    };
-    export default AyatulKursi;
+  });
+  return (
+    <View>
+      <Text className="text-center font-semibold text-2xl">Ayatul Kursi</Text>
+    </View>
+  );
+};
+export default AyatulKursi;

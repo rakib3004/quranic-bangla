@@ -1,13 +1,21 @@
-import { Text, View } from 'react-native';
+import React, { useLayoutEffect } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { Text, View } from "react-native";
 
-const SurahIkhlas = () =>{
-
-    return (
-    <View>
-        <Text>
-        Surah Ikhlas
-        </Text>
-    </View>
+const SurahIkhlas = () => {
+    const navigation = useNavigation();
+useLayoutEffect(() => {
+    navigation.setOptions(
+      {
+        headerShown: false,
+      },
+      []
     );
-    };
-    export default SurahIkhlas;
+  });
+  return (
+    <View>
+      <Text className="text-center font-semibold text-2xl">Surah Ikhlas</Text>
+    </View>
+  );
+};
+export default SurahIkhlas;
