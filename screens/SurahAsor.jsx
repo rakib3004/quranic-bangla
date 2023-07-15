@@ -1,5 +1,5 @@
-import React, { useLayoutEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import React, { useLayoutEffect } from 'react';
 import { Text, View } from "react-native";
 import { Button } from "react-native-web";
 
@@ -34,7 +34,7 @@ useLayoutEffect(() => {
     
     <View >
       <Text className="text-center font-semibold text-4xl">Surah Asor</Text>
-      <Button className="w-1/4 h-auto text-black bg-blue-800" onPress={() => navigation.navigate("Home")}>Go To Home</Button>
+      <Button className="w-200 h-auto text-black bg-blue-800" onPress={() => navigation.navigate("Home")}>Go To Home</Button>
 
       {quranicData.map((ayat, index) => (
         <View

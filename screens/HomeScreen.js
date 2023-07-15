@@ -24,7 +24,7 @@ const HomeScreen = () => {
 
 return (
   <View className="flex-1 p-4">
-  <Text className="text-3xl font-mono justify-center flex-1 text-center pt-12 ">Quranic Bangla </Text>
+  <Text className="text-3xl justify-center flex-1 text-center pt-12 ">Quranic Bangla </Text>
     <View className="flex-row mb-4">
     
       <CardItem item={cardItems[0]} />

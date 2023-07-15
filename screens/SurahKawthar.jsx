@@ -6,19 +6,19 @@ import { Button } from "react-native-web";
 const SurahKawthar = () => {
   const quranicData = [
     {
-      arabic: "",
-      bangla: "",
-      english: "",
+      arabic: "إِنَّآ أَعْطَيْنَـٰكَ ٱلْكَوْثَرَ",
+      bangla: "নিশ্চয় আমি তোমাকে আল-কাউসার দান করেছি।",
+      english: "Indeed, We have granted you ˹O Prophet˺ abundant goodness.",
     },
     {
-      arabic: "",
-      bangla: "",
-      english: "",
+      arabic: "فَصَلِّ لِرَبِّكَ وَٱنْحَرْ",
+      bangla: "অতএব তোমার রবের উদ্দেশ্যেই সালাত পড় এবং নহর কর*। *অর্থ কুরবানী কর।",
+      english: "So pray and sacrifice to your Lord ˹alone˺.",
     },
     {
-      arabic: "",
-      bangla: "",
-      english: "",
+      arabic: "إِنَّ شَانِئَكَ هُوَ ٱلْأَبْتَرُ",
+      bangla: "নিশ্চয় তোমার প্রতি শত্রুতা পোষণকারীই নির্বংশ।",
+      english: "Only the one who hates you is truly cut off ˹from any goodness˺.",
     },
   ];
     const navigation = useNavigation();
@@ -33,8 +33,8 @@ useLayoutEffect(() => {
   return (
    
     <View >
-      <Text className="text-center font-semibold text-4xl">Surah Bakarah</Text>
-      <Button className="w-1/4 h-auto text-black bg-blue-800" onPress={() => navigation.navigate("Home")}>Go To Home</Button>
+      <Text className="text-center font-semibold text-4xl">Surah Kawthar</Text>
+      <Button className="w-10 h-auto text-black bg-blue-800" onPress={() => navigation.navigate("Home")}>Go To Home</Button>
 
       {quranicData.map((ayat, index) => (
         <View
