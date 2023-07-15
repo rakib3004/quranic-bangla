@@ -6,19 +6,34 @@ import { Button } from "react-native-web";
 const SurahNas = () => {
   const quranicData = [
     {
-      arabic: "",
-      bangla: "",
-      english: "",
+      arabic: "قُلْ أَعُوذُ بِرَبِّ ٱلنَّاسِ",
+      bangla: "বল, ‘আমি আশ্রয় চাই মানুষের রব,",
+      english: "Say, ˹O Prophet,˺ “I seek refuge in the Lord of humankind,",
     },
     {
-      arabic: "",
-      bangla: "",
-      english: "",
+      arabic: "مَلِكِ ٱلنَّاسِ",
+      bangla: "মানুষের অধিপতি,",
+      english: "the Master of humankind,",
     },
     {
-      arabic: "",
-      bangla: "",
-      english: "",
+      arabic: "إِلَـٰهِ ٱلنَّاسِ",
+      bangla: "মানুষের ইলাহ-এর কাছে,",
+      english: "the God of humankind,",
+    },
+    {
+      arabic: "مِن شَرِّ ٱلْوَسْوَاسِ ٱلْخَنَّاسِ",
+      bangla: "কুমন্ত্রণাদাতার অনিষ্ট থেকে, যে দ্রুত আত্মগোপন করে।",
+      english: "from the evil of the lurking whisperer—",
+    },
+    {
+      arabic: "ٱلَّذِى يُوَسْوِسُ فِى صُدُورِ ٱلنَّاسِ",
+      bangla: "যে মানুষের মনে কুমন্ত্রণা দেয়।",
+      english: "who whispers into the hearts of humankind—",
+    },
+    {
+      arabic: "مِنَ ٱلْجِنَّةِ وَٱلنَّاسِ",
+      bangla: "জিন ও মানুষ থেকে।”",
+      english: "from among jinn and humankind.",
     },
   ];
     const navigation = useNavigation();

@@ -6,19 +6,19 @@ import { Button } from "react-native-web";
 const SurahIkhlas = () => {
   const quranicData = [
     {
-      arabic: "",
-      bangla: "",
-      english: "",
+      arabic: "قُلْ هُوَ ٱللَّهُ أَحَدٌmc",
+      bangla: "বল, তিনিই আল্লাহ, এক-অদ্বিতীয়।",
+      english: "Say, ˹O Prophet,˺ “He is Allah—One ˹and Indivisible˺;",
     },
     {
-      arabic: "",
-      bangla: "",
-      english: "",
+      arabic: "ٱللَّهُ ٱلصَّمَدُ ٢",
+      bangla: "আল্লাহ কারো মুখাপেক্ষী নন, সকলেই তাঁর মুখাপেক্ষী।",
+      english: "Allah—the Sustainer ˹needed by all˺.",
     },
     {
-      arabic: "",
-      bangla: "",
-      english: "",
+      arabic: "لَمْ يَلِدْ وَلَمْ يُولَدْ",
+      bangla: "তিনি কাউকে জন্ম দেননি এবং তাঁকেও জন্ম দেয়া হয়নি।",
+      english: "He has never had offspring, nor was He born.",
     },
   ];
     const navigation = useNavigation();
