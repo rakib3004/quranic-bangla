@@ -1,9 +1,9 @@
-import React, { useLayoutEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
+import React, { useLayoutEffect } from 'react';
 import { Text, View } from "react-native";
 import { Button } from "react-native-web";
 
-const SurahBakarah = () => {
+const SurahNasr = () => {
   const quranicData = [
     {
       arabic: "",
@@ -31,13 +31,13 @@ useLayoutEffect(() => {
     );
   });
   return (
-   
+  
     <View >
-      <Text className="text-center font-semibold text-4xl">Surah Bakarah</Text>
+      <Text className="text-center font-semibold text-4xl">Ayatul Kursi</Text>
       <Button className="w-1/4 h-auto text-black bg-blue-800" onPress={() => navigation.navigate("Home")}>Go To Home</Button>
 
       {quranicData.map((ayat, index) => (
-        <View
+     <View
           key={index}
           className="bg-white w-1/2 border-white rounded-lg shadow-lg px-6 py-6 my-4 flex justify-center items-center"
         >
@@ -50,4 +50,4 @@ useLayoutEffect(() => {
 
   );
 };
-export default SurahBakarah;
+export default SurahNasr;

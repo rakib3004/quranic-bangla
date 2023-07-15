@@ -15,9 +15,9 @@ const HomeScreen = () => {
     const cardItems = [
       { name: 'Surah Asor', image: require('../public/first.png') },
       { name: 'Surah Fatiha', image: require('../public/second.png') },
-      { name: 'Ayatul Kursi', image: require('../public/third.png') },
+      { name: 'Surah Nasr', image: require('../public/third.png') },
       { name: 'Surah Ikhlas', image: require('../public/forth.png') },
-      { name: 'Surah Bakarah', image: require('../public/fifth.png') },
+      { name: 'Surah Kawthar', image: require('../public/fifth.png') },
       { name: 'Surah Nas', image: require('../public/sixth.png') },
     ];
 
