@@ -4,12 +4,12 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from "react";
 import { TailwindProvider } from 'tailwindcss-react-native';
 import HomeScreen from './screens/HomeScreen';
-import SurahAsor from './screens/SurahAsor';
-import SurahFatiha from './screens/SurahFatiha';
-import SurahIkhlas from './screens/SurahIkhlas';
-import SurahKawthar from './screens/SurahKawthar';
-import SurahNas from './screens/SurahNas';
-import SurahNasr from './screens/SurahNasr';
+import SurahAsor from './screens/surahs/SurahAsor';
+import SurahFatiha from './screens/surahs/SurahFatiha';
+import SurahIkhlas from './screens/surahs/SurahIkhlas';
+import SurahKawthar from './screens/surahs/SurahKawthar';
+import SurahNas from './screens/surahs/SurahNas';
+import SurahNasr from './screens/surahs/SurahNasr';
 
 
 const Stack = createNativeStackNavigator();

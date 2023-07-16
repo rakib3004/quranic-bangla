@@ -49,7 +49,7 @@ useLayoutEffect(() => {
 
     <View >
       <Text className="text-center font-semibold text-4xl">Surah Nas</Text>
-      <Button className="w-200 h-auto text-black bg-blue-800" onPress={() => navigation.navigate("Home")}>Go To Home</Button>
+      <Button className="" onPress={() => navigation.navigate("Home")}>Go To Home</Button>
 
       {quranicData.map((ayat, index) => (
         <View

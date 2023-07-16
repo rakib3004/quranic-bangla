@@ -33,8 +33,9 @@ useLayoutEffect(() => {
   return (
    
     <View >
+
       <Text className="text-center font-semibold text-4xl">Surah Kawthar</Text>
-      <Button className="w-10 h-auto text-black bg-blue-800" onPress={() => navigation.navigate("Home")}>Go To Home</Button>
+      <Button className="text-5xl" onPress={() => navigation.navigate("Home")}>Go To Home</Button>
 
       {quranicData.map((ayat, index) => (
         <View
@@ -46,6 +47,7 @@ useLayoutEffect(() => {
           <Text className="text-center text-md">{ayat.english}</Text>
         </View>
       ))}
+
     </View >
 
   );
