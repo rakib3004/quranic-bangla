@@ -6,25 +6,30 @@ import { Button } from "react-native-web";
 const SurahFalaq = () => {
   const quranicData = [
     {
-      arabic: "",
-      bangla: "",
-      english: "",
+      arabic: "قُلۡ اَعُوۡذُ بِرَبِّ الۡفَلَقِ",
+      bangla: "বল, ‘আমি আশ্রয় প্রার্থনা করছি ঊষার রবের কাছে,",
+      english: "Say, ˹O Prophet,˺ “I seek refuge in the Lord of the daybreak",
     },
     {
-      arabic: "",
-      bangla: "",
-      english: "",
+      arabic: "مِنۡ شَرِّ مَا خَلَقَ",
+      bangla: "তিনি যা সৃষ্টি করেছেন তার অনিষ্ট থেকে,",
+      english: "from the evil of whatever He has created",
     },
     {
-        arabic: "",
-        bangla: "",
-        english: "",
+        arabic: "وَمِنۡ شَرِّ غَاسِقٍ اِذَا وَقَبَ",
+        bangla: "আর রাতের অন্ধকারের অনিষ্ট থেকে যখন তা গভীর হয়",
+        english: "and from the evil of the night when it grows dark",
     },
     {
-        arabic: "",
-        bangla: "",
-        english: "",
-    },   
+        arabic: "وَمِنۡ شَرِّ النَّفّٰثٰتِ فِى الۡعُقَدِ",
+        bangla: "আর গিরায় ফুঁ-দানকারী নারীদের অনিষ্ট থেকে,",
+        english: "and from the evil of those ˹witches casting spells by˺ blowing onto knots",
+    }, 
+    {
+      arabic: "وَمِنۡ شَرِّ حَاسِدٍ اِذَا حَسَدَ",
+      bangla: "and from the evil of an envier when they envy",
+      english: "আর হিংসুকের অনিষ্ট থেকে যখন সে হিংসা করে",
+    },    
   ];
     const navigation = useNavigation();
 useLayoutEffect(() => {
