@@ -6,24 +6,24 @@ import { Button } from "react-native-web";
 const SurahQuraysh = () => {
   const quranicData = [
     {
-      arabic: "",
-      bangla: "",
-      english: "",
+      arabic: "لِإِيلَـٰفِ قُرَيْشٍ",
+      bangla: "যেহেতু কুরাইশ অভ্যস্ত,",
+      english: "˹At least˺ for ˹the favour of˺ making Quraysh habitually secure—",
     },
     {
-      arabic: "",
-      bangla: "",
-      english: "",
+      arabic: "إِۦلَـٰفِهِمْ رِحْلَةَ ٱلشِّتَآءِ وَٱلصَّيْفِ",
+      bangla: "শীত ও গ্রীষ্মের সফরে তারা অভ্যস্ত হওয়ায়।",
+      english: "secure in their trading caravan ˹to Yemen˺ in the winter and ˹Syria˺ in the summer—",
     },
     {
-        arabic: "",
-        bangla: "",
-        english: "",
+        arabic: "فَلْيَعْبُدُوا۟ رَبَّ هَـٰذَا ٱلْبَيْتِ",
+        bangla: "অতএব তারা যেন এ গৃহের রবের ‘ইবাদাত করে,",
+        english: "let them worship the Lord of this ˹Sacred˺ House,",
     },
     {
-        arabic: "",
-        bangla: "",
-        english: "",
+        arabic: "ٱلَّذِىٓ أَطْعَمَهُم مِّن جُوعٍۢ وَءَامَنَهُم مِّنْ خَوْفٍۭ",
+        bangla: "যিনি ক্ষুধায় তাদেরকে আহার দিয়েছেন আর ভয় থেকে তাদেরকে নিরাপদ করেছেন।",
+        english: "Who has fed them against hunger and made them secure against fear.",
     },   
   ];
     const navigation = useNavigation();

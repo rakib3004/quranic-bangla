@@ -13,12 +13,12 @@ const HomeScreen = () => {
 
 
     const cardItems = [
-      { name: 'Surah Asor', image: require('../public/quran-holder.png') },
-      { name: 'Surah Fatiha', image: require('../public/gradiant-quran-holder.png') },
-      { name: 'Surah Nasr', image: require('../public/al-quran-preview.png') },
-      { name: 'Surah Ikhlas', image: require('../public/light.png') },
-      { name: 'Surah Kawthar', image: require('../public/start-mosque.png') },
-      { name: 'Surah Nas', image: require('../public/mehrab.png') },
+      { name: 'Level 1', image: require('../public/quran-holder.png') },
+      { name: 'Level 2', image: require('../public/gradiant-quran-holder.png') },
+      { name: 'Level 3', image: require('../public/al-quran-preview.png') },
+      { name: 'Level 4', image: require('../public/light.png') },
+      { name: 'Level 5', image: require('../public/start-mosque.png') },
+      { name: 'Level 6', image: require('../public/mehrab.png') },
     ];
 
 
