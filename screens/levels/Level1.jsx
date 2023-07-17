@@ -14,8 +14,8 @@ const Level1 = () => {
    
     
     const cardItems = [
-      { name: 'Surah Fatiha', image: require('../public/al-quran-preview.png') },
-      { name: 'Surah Ikhlas', image: require('../public/light.png') },
+      { name: 'Surah Fatiha', image: require('../../public/al-quran-preview.png') },
+      { name: 'Surah Ikhlas', image: require('../../public/light.png') },
     ];
 
 

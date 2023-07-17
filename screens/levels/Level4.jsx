@@ -17,10 +17,10 @@ const Level4 = () => {
     
     
     const cardItems = [
-      { name: 'Surah Kawthar', image: require('../public/quran-holder.png') },
-      { name: 'Surah Kafirun', image: require('../public/gradiant-quran-holder.png') },
-      { name: 'Surah Nasr', image: require('../public/al-quran-preview.png') },
-      { name: 'Surah Masad', image: require('../public/light.png') },
+      { name: 'Surah Kawthar', image: require('../../public/quran-holder.png') },
+      { name: 'Surah Kafirun', image: require('../../public/gradiant-quran-holder.png') },
+      { name: 'Surah Nasr', image: require('../../public/al-quran-preview.png') },
+      { name: 'Surah Masad', image: require('../../public/light.png') },
 
     ];
 
