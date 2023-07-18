@@ -1,6 +1,6 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useLayoutEffect } from 'react';
-import { Image, Text, View } from 'react-native';
+import { Button, Image, Text, View } from 'react-native';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Level1 = () => {
@@ -22,7 +22,6 @@ const Level1 = () => {
 return (
   <View className="flex-1 p-4">
   <Text className="text-3xl justify-center flex-1 text-center pt-12 ">Level 1</Text>
-
     <View className="flex-row mb-4">
       <CardItem item={cardItems[0]} />
       <CardItem item={cardItems[1]} />
