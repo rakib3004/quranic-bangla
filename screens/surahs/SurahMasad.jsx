@@ -3,17 +3,18 @@ import { View, Text, TouchableOpacity } from 'react-native';
 
 const SurahMasad = () => {
   const [words, setWords] = useState([
-    { english: 'Hello', bangla: 'হ্যালো' },
-    { english: 'Goodbye', bangla: 'বিদায়' },
-    { english: 'Thank you', bangla: 'ধন্যবাদ' },
-    // Add more words here
+    { english: 'الَّذِينَ هُمْ', bangla: 'যারা' },
+    { english: 'صَلَاتِهِمْ', bangla: 'তাদের সালাত' },
+    { english: 'عَنْ', bangla: 'সম্বন্ধে' },
+    { english: 'سَاهُونَ', bangla: 'উদাসীন' },
+
   ]);
 
   const [selectedFirstWord, setSelectedFirstWord] = useState('');
   const [selectedSecondWord, setSelectedSecondWord] = useState('');
 
 
-  const handleWordSelection = (englishWord) => {
+  const handleWordSelectionEnglish = (englishWord) => {
     const selected = words.find((word) => word.english === englishWord);
     if (selected) {
       setSelectedFirstWord(selected.bangla);
@@ -21,7 +22,7 @@ const SurahMasad = () => {
     }
   };
 
-  const handleWordSelection2 = (banglaWord) => {
+  const handleWordSelectionBangla = (banglaWord) => {
     const selected = words.find((word) => word.bangla === banglaWord);
     if (selected) {
       setSelectedFirstWord(selected.english);
@@ -30,20 +31,10 @@ const SurahMasad = () => {
   };
   return (
     <View>
-      <Text style={{ fontSize: 24, marginBottom: 20 }}>Word Selector</Text>
+      <Text style={{ fontSize: 24, margin: 20 }}>Word Selector</Text>
       <View>
         {words.map((word) => (
-          <TouchableOpacity
-            key={word.english}
-            style={{
-              backgroundColor: selectedFirstWord === word.english || selectedSecondWord ===word.english ? '#033D6C' : '#53AF32',
-              padding: 10,
-              marginBottom: 10,
-            }}
-            onPress={() => handleWordSelection(word.english)}
-          >
-            <Text>{word.english}</Text>
-          </TouchableOpacity>
+       <EnglishWordToken word={word} handleWordSelectionEnglish={handleWordSelectionEnglish} selectedFirstWord={selectedFirstWord} selectedSecondWord={selectedSecondWord}/>
         ))}
       </View>
       <View>
@@ -56,7 +47,7 @@ const SurahMasad = () => {
               marginBottom: 10,
             }}
             onPre
-            onPress={() => handleWordSelection2(word.bangla)}
+            onPress={() => handleWordSelectionBangla(word.bangla)}
           >
             <Text>{word.bangla}</Text>
           </TouchableOpacity>
@@ -66,6 +57,31 @@ const SurahMasad = () => {
   
     </View>
   );
+  
+
 };
+
+const EnglishWordToken = ({ word, handleWordSelectionEnglish, selectedFirstWord, selectedSecondWord }) => {
+
+  return(
+    <TouchableOpacity
+    key={word}
+    style={{
+      backgroundColor: selectedFirstWord === word || selectedSecondWord ===word ? '#033D6C' : '#53AF32',
+      padding: 10,
+      marginBottom: 10,
+    }}
+    onPress={() => handleWordSelectionEnglish(word)}
+  >
+    <Text>{word}</Text>
+  </TouchableOpacity>
+  
+  );
+  
+  };
+
+
+
+
 
 export default SurahMasad;
