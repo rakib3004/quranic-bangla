@@ -1,7 +1,8 @@
 import { useNavigation } from '@react-navigation/native';
 import React, { useLayoutEffect } from 'react';
 import { Text, View } from "react-native";
-import { Button } from "react-native-web";
+import { TouchableOpacity } from 'react-native-gesture-handler';
+
 
 const SurahKawthar = () => {
   const quranicData = [
@@ -35,7 +36,10 @@ useLayoutEffect(() => {
     <View >
 
       <Text className="text-center font-semibold text-4xl">Surah Kawthar</Text>
-      <Button className="text-5xl" onPress={() => navigation.navigate("Home")}>Go To Home</Button>
+      <TouchableOpacity className="text-5xl" onPress={() => navigation.navigate("Home")}>
+      <Text className="text-xl text-orange-500">   Back   </Text>
+
+      </TouchableOpacity>
 
       {quranicData.map((ayat, index) => (
         <View
