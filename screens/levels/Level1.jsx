@@ -1,51 +1,121 @@
-import { useNavigation } from '@react-navigation/native';
-import React, { useLayoutEffect } from 'react';
-import { Button, Image, Text, View } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React, { useState } from "react";
+import { View, Text, TouchableOpacity } from "react-native";
 
 const Level1 = () => {
-  const navigation = useNavigation();
-  useLayoutEffect(() => {
-        navigation.setOptions({
-            headerShown: false,
-        }, [])
-    });
+  const words = 
+     [
+        { arabic: "الَّذِينَ هُمْ", bangla: "যারা" },
+        { arabic: "عَنْ", bangla: "সম্বন্ধে" },
+        { arabic: "صَلَاتِهِمْ", bangla: "তাদের সালাত" },
+        { arabic: "سَاهُونَ", bangla: "উদাসীন" },
+     ];
 
-   
-    
-    const cardItems = [
-      { name: 'Surah Fatiha', image: require('../../public/al-quran-preview.png') },
-      { name: 'Surah Ikhlas', image: require('../../public/light.png') },
-    ];
+  const [selectedFirstWord, setSelectedFirstWord] = useState("");
+  const [selectedSecondWord, setSelectedSecondWord] = useState("");
 
+  const handleWordSelectionArabic = (arabicWord) => {
+    const selected = words.find((word) => word.arabic === arabicWord);
+    if (selected) {
+      setSelectedFirstWord(selected.bangla);
+      setSelectedSecondWord(selected.arabic);
+    }
+  };
 
-return (
-  <View className="flex-1 p-4">
-  <Text className="text-3xl justify-center flex-1 text-center pt-12 ">Level 1</Text>
-    <View className="flex-row mb-4">
-      <CardItem item={cardItems[0]} />
-      <CardItem item={cardItems[1]} />
-    </View>
-  </View>  );
-};
-
-const CardItem = ({ item }) => {
+  const handleWordSelectionBangla = (banglaWord) => {
+    const selected = words.find((word) => word.bangla === banglaWord);
+    if (selected) {
+      setSelectedFirstWord(selected.arabic);
+      setSelectedSecondWord(selected.bangla);
+    }
+  };
+  return (
+    <View>
+      <Text className="text-xl my-5">শব্দ ১ঃ (هُمْ)</Text>
+      <View className="flex flex-row">
+          <WordToken
+            word={words[0].arabic}
+            handleWordSelection={handleWordSelectionArabic}
+            selectedFirstWord={selectedFirstWord}
+            selectedSecondWord={selectedSecondWord}
+          />
+          <WordToken
+            word={words[1].arabic}
+            handleWordSelection={handleWordSelectionArabic}
+            selectedFirstWord={selectedFirstWord}
+            selectedSecondWord={selectedSecondWord}
+          />
+          <WordToken
+            word={words[2].arabic}
+            handleWordSelection={handleWordSelectionArabic}
+            selectedFirstWord={selectedFirstWord}
+            selectedSecondWord={selectedSecondWord}
+          />
+          <WordToken
+            word={words[3].arabic}
+            handleWordSelection={handleWordSelectionArabic}
+            selectedFirstWord={selectedFirstWord}
+            selectedSecondWord={selectedSecondWord}
+          />
+      </View>
  
-  const navigation = useNavigation();
-  const itemName  =  item.name;
+      <View className="flex flex-row">
+      <WordToken
+            word={words[0].bangla}
+            handleWordSelection={handleWordSelectionBangla}
+            selectedFirstWord={selectedFirstWord}
+            selectedSecondWord={selectedSecondWord}
+          />
+          <WordToken
+            word={words[2].bangla}
+            handleWordSelection={handleWordSelectionBangla}
+            selectedFirstWord={selectedFirstWord}
+            selectedSecondWord={selectedSecondWord}
+          />
+          <WordToken
+            word={words[1].bangla}
+            handleWordSelection={handleWordSelectionBangla}
+            selectedFirstWord={selectedFirstWord}
+            selectedSecondWord={selectedSecondWord}
+          />
+          <WordToken
+            word={words[3].bangla}
+            handleWordSelection={handleWordSelectionBangla}
+            selectedFirstWord={selectedFirstWord}
+            selectedSecondWord={selectedSecondWord}
+          />
+     </View>
 
-  const screenName = itemName.replace(/\s/g, '');
-
-return(
-    <TouchableOpacity onPress={() => navigation.navigate(screenName)}>
-      <View className="w-40 h-48  p-4 bg-gray-600  border-1 mr-4 justify-center ">
-    <Image source={item.image} className="w-10 h-10 object-cover justify-center rounded-lg" /> 
-    <Text className="text-xl text-white font-bold">{item.name}</Text>
+     <View>
+     <TouchableOpacity className="text-5xl" onPress={() => navigation.navigate("Home")}>
+      <Text className="text-xl text-orange-500"> পরবর্তী {'->'} </Text>
+      </TouchableOpacity>
+     </View>
   </View>
-    </TouchableOpacity>
-
-);
-
+  );
 };
+
+const WordToken = ({
+  word,
+  handleWordSelection,
+  selectedFirstWord,
+  selectedSecondWord,
+}) => {
+  return (
+    <TouchableOpacity
+  key={word}
+  className={`${
+    selectedFirstWord === word || selectedSecondWord === word
+      ? "bg-[#033D6C]"
+      : "bg-[#53AF32]"
+  } p-4 mb-4 mr-3 rounded-lg`}
+  onPress={() => handleWordSelection(word)}
+>
+  <Text>{word}</Text>
+</TouchableOpacity>
+  );
+};
+
+
+
 
 export default Level1;

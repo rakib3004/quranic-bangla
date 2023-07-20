@@ -38,7 +38,6 @@ useLayoutEffect(() => {
       <Text className="text-center font-semibold text-4xl">Surah Kawthar</Text>
       <TouchableOpacity className="text-5xl" onPress={() => navigation.navigate("Home")}>
       <Text className="text-xl text-orange-500">   Back   </Text>
-
       </TouchableOpacity>
 
       {quranicData.map((ayat, index) => (

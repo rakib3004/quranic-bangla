@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 
-const SurahMasad = () => {
-  const words = [
-    { arabic: "الَّذِينَ هُمْ", bangla: "যারা" },
-    { arabic: "عَنْ", bangla: "সম্বন্ধে" },
-    { arabic: "صَلَاتِهِمْ", bangla: "তাদের সালাত" },
-    { arabic: "سَاهُونَ", bangla: "উদাসীন" },
-  ];
+const Word2 = () => {
+  const words = 
+     [
+        { arabic: "خَلَقَ", bangla: "সৃষ্টি করেছেন" },
+        { arabic: "الْإِنْسَانَ", bangla: "মানুষকে" },
+        { arabic: "مِنْ", bangla: "হতে" },
+        { arabic: "عَلَقٍ", bangla: "আলাক" },
+     ];
 
   const [selectedFirstWord, setSelectedFirstWord] = useState("");
   const [selectedSecondWord, setSelectedSecondWord] = useState("");
@@ -83,6 +84,12 @@ const SurahMasad = () => {
             selectedSecondWord={selectedSecondWord}
           />
      </View>
+
+     <View>
+     <TouchableOpacity className="text-5xl" onPress={() => navigation.navigate("Home")}>
+      <Text className="text-xl text-orange-500"> পরবর্তী {'->'} </Text>
+      </TouchableOpacity>
+     </View>
   </View>
   );
 };
@@ -111,4 +118,4 @@ const WordToken = ({
 
 
 
-export default SurahMasad;
+export default Word2;
