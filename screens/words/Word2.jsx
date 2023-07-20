@@ -4,10 +4,10 @@ import { View, Text, TouchableOpacity } from "react-native";
 const Word2 = () => {
   const words = 
      [
-        { arabic: "خَلَقَ", bangla: "সৃষ্টি করেছেন" },
-        { arabic: "الْإِنْسَانَ", bangla: "মানুষকে" },
-        { arabic: "مِنْ", bangla: "হতে" },
-        { arabic: "عَلَقٍ", bangla: "আলাক" },
+        { arabic: "خَلَقَ", bangla: "সৃষ্টি করেছেন", color: "#0282D7" },
+        { arabic: "الْإِنْسَانَ", bangla: "মানুষকে", color: "#D60093" },
+        { arabic: "مِنْ", bangla: "হতে", color: "#990000" },
+        { arabic: "عَلَقٍ", bangla: "আলাক", color: "#006600" },
      ];
 
   const [selectedFirstWord, setSelectedFirstWord] = useState("");
@@ -30,7 +30,7 @@ const Word2 = () => {
   };
   return (
     <View>
-      <Text className="text-xl my-5">শব্দ ১ঃ (هُمْ)</Text>
+      <Text className="text-xl my-5">শব্দ ২: (مِنْ) কোরআনে এসেছে মোট ৩২২১ বার </Text>
       <View className="flex flex-row">
           <WordToken
             word={words[0].arabic}
@@ -85,11 +85,20 @@ const Word2 = () => {
           />
      </View>
 
-     <View>
-     <TouchableOpacity className="text-5xl" onPress={() => navigation.navigate("Home")}>
+{/*     
+<View className="flex flex-row justify-between">
+<View>
+     <TouchableOpacity className="text-5xl" onPress={() => navigation.navigate("Word3")}>
       <Text className="text-xl text-orange-500"> পরবর্তী {'->'} </Text>
       </TouchableOpacity>
      </View>
+     <View>
+     <TouchableOpacity className="text-5xl" onPress={() => navigation.navigate("Word1")}>
+      <Text className="text-xl text-orange-500">{'<-'} পূর্ববর্তী  </Text>
+      </TouchableOpacity>
+     </View>
+</View> */}
+     
   </View>
   );
 };
