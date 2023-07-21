@@ -84,20 +84,7 @@ const Word1 = () => {
             selectedSecondWord={selectedSecondWord}
           />
      </View>
-{/* 
 
-<View className="flex flex-row justify-between">
-<View>
-     <TouchableOpacity className="text-5xl" onPress={() => navigation.navigate("Word2")}>
-      <Text className="text-xl text-orange-500"> পরবর্তী {'->'} </Text>
-      </TouchableOpacity>
-     </View>
-     <View>
-     <TouchableOpacity className="text-5xl" onPress={() => navigation.navigate("Home")}>
-      <Text className="text-xl text-orange-500">{'<-'} হোম  </Text>
-      </TouchableOpacity>
-     </View>
-</View> */}
      
       
   </View>

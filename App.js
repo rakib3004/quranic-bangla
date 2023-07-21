@@ -13,6 +13,8 @@ import Level6 from './screens/levels/Level6';
 import Word1 from './screens/words/Word1';
 import Word2 from './screens/words/Word2';
 import Word3 from './screens/words/Word3';
+import Questions from './screens/questions/Questions';
+import Question1 from './screens/questions/Question1';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,6 +34,9 @@ return (
         <Stack.Screen name="Word1" component={Word1} />
         <Stack.Screen name="Word2" component={Word2} />
         <Stack.Screen name="Word3" component={Word3} />
+        <Stack.Screen name="Questions" component={Questions} />
+        <Stack.Screen name="Question1" component={Question1} />
+
 
 
        
