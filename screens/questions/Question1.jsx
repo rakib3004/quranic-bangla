@@ -7,36 +7,36 @@ const Question1 = () => {
   const navigation = useNavigation();
 
   const words = 
-     [
-        { arabic: "الَّذِينَ هُمْ", bangla: "যারা", color: "#0282D7" },
-        { arabic: "عَنْ", bangla: "সম্বন্ধে", color: "#D60093" },
-        { arabic: "صَلَاتِهِمْ", bangla: "তাদের সালাত", color: "#990000" },
-        { arabic: "سَاهُونَ", bangla: "উদাসীন", color: "#006600" },
-     ];
-  //   [
-  //     { arabic: "خَلَقَ", bangla: "সৃষ্টি করেছেন", color: "#0282D7" },
-  //     { arabic: "الْإِنْسَانَ", bangla: "মানুষকে", color: "#D60093" },
-  //     { arabic: "مِنْ", bangla: "হতে", color: "#990000" },
-  //     { arabic: "عَلَقٍ", bangla: "আলাক", color: "#006600" },
-  //  ];
+    //  [
+    //     { arabic: "الَّذِينَ هُمْ", bangla: "যারা", color: "#0282D7" },
+    //     { arabic: "عَنْ", bangla: "সম্বন্ধে", color: "#D60093" },
+    //     { arabic: "صَلَاتِهِمْ", bangla: "তাদের সালাত", color: "#990000" },
+    //     { arabic: "سَاهُونَ", bangla: "উদাসীন", color: "#006600" },
+    //  ];
+    [
+      { arabic: "خَلَقَ", bangla: "সৃষ্টি করেছেন", color: "#0282D7" },
+      { arabic: "الْإِنْسَانَ", bangla: "মানুষকে", color: "#D60093" },
+      { arabic: "مِنْ", bangla: "হতে", color: "#990000" },
+      { arabic: "عَلَقٍ", bangla: "আলাক", color: "#006600" },
+   ];
 
   const finalWords =  
-  //[
-//     { arabic: "خَلَقَ", bangla: "সৃষ্টি করেছেন", color: "#0282D7" },
-//     { arabic: "الْإِنْسَانَ", bangla: "মানুষকে", color: "#D60093" },
-//     { arabic: "مِنْ", bangla: "হতে", color: "#990000" },
-//     { arabic: "عَلَقٍ", bangla: "আলাক", color: "#006600" },
-//  ];
-[
-  { arabic: "الَّذِينَ هُمْ", bangla: "যারা", color: "#0282D7" },
-  { arabic: "عَنْ", bangla: "সম্বন্ধে", color: "#D60093" },
-  { arabic: "صَلَاتِهِمْ", bangla: "তাদের সালাত", color: "#990000" },
-  { arabic: "سَاهُونَ", bangla: "উদাসীন", color: "#006600" },
-];
+  [
+    { arabic: "خَلَقَ", bangla: "সৃষ্টি করেছেন", color: "#0282D7" },
+    { arabic: "الْإِنْسَانَ", bangla: "মানুষকে", color: "#D60093" },
+    { arabic: "مِنْ", bangla: "হতে", color: "#990000" },
+    { arabic: "عَلَقٍ", bangla: "আলাক", color: "#006600" },
+ ];
+// [
+//   { arabic: "الَّذِينَ هُمْ", bangla: "যারা", color: "#0282D7" },
+//   { arabic: "عَنْ", bangla: "সম্বন্ধে", color: "#D60093" },
+//   { arabic: "صَلَاتِهِمْ", bangla: "তাদের সালাত", color: "#990000" },
+//   { arabic: "سَاهُونَ", bangla: "উদাসীন", color: "#006600" },
+// ];
 
   const [wordNo, setWordNo] = useState(0);
-  const [selectedFirstWord, setSelectedFirstWord] = useState(finalWords[wordNo].arabic);
-  const [selectedFirstWordBangla, setSelectedFirstWordBangla] = useState(finalWords[wordNo].bangla);
+  const [selectedFirstWord, setSelectedFirstWord] = useState(finalWords[0].arabic);
+  const [selectedFirstWordBangla, setSelectedFirstWordBangla] = useState(finalWords[0].bangla);
   const [answerScript, setAnswerScript] = useState("")
 
   const shuffleArray= (array)=> {
@@ -49,18 +49,20 @@ const Question1 = () => {
   const tempWords = words;
   const shuffledWords = shuffleArray(tempWords);
 
-
+console.log(selectedFirstWord);
   const handleWordSelectionBangla = (banglaWord) => {
     const selected = banglaWord===selectedFirstWordBangla;
     if (selected) {
       setAnswerScript(answerScript+" "+selectedFirstWordBangla);
 
-      setWordNo((wordNo+1)%finalWords.length);
+      setWordNo((wordNo+1)%words.length);
      
-
-      setSelectedFirstWord(finalWords[wordNo].arabic);
-      setSelectedFirstWordBangla(finalWords[wordNo].bangla);
+      setSelectedFirstWord(finalWords[wordNo+1].arabic);
+      setSelectedFirstWordBangla(finalWords[wordNo+1].bangla);
     }
+  };
+  const handleWordSelectionArabic = (arabicWord) => {
+  
   };
   return (
     <View>
@@ -69,7 +71,9 @@ const Question1 = () => {
       
       {finalWords.map((word) => (
           <WordToken
+          key={word.arabic}
             word={word.arabic}
+            handleWordSelection={handleWordSelectionArabic}
             selectedFirstWord={selectedFirstWord}
           />
             ))}
@@ -81,13 +85,31 @@ const Question1 = () => {
       <View className="flex flex-row">
       {shuffledWords.map((shuffledWord) => (
           <WordToken
+            key={shuffledWord.bangla}
             word={shuffledWord.bangla}
             handleWordSelection={handleWordSelectionBangla}
             selectedFirstWord={selectedFirstWord}
           />
             ))}
      </View>
-    
+     <View className="flex flex-row justify-between">
+        <View>
+          <TouchableOpacity
+            className="text-5xl"
+            onPress={() => navigation.navigate("Question2")}
+          >
+            <Text className="text-xl text-orange-500"> পরবর্তী {"->"} </Text>
+          </TouchableOpacity>
+        </View>
+        <View>
+          <TouchableOpacity
+            className="text-5xl"
+            onPress={() => navigation.navigate("Home")}
+          >
+            <Text className="text-xl text-orange-500">{"<-"} হোম </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
       
   </View>
   );
@@ -108,7 +130,11 @@ const WordToken = ({
   } p-4 mb-4 mr-3 rounded-lg`}
   onPress={() => handleWordSelection(word)}
 >
-  <Text>{word}</Text>
+  <Text className={`${
+    selectedFirstWord === word 
+      ? "font-bold text-white"
+      : "text-black"
+  }`}>{word}</Text>
 </TouchableOpacity>
   );
 };

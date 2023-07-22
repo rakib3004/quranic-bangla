@@ -4,10 +4,10 @@ import { View, Text, TouchableOpacity } from "react-native";
 const Word1 = () => {
   const words = 
      [
-        { arabic: "الَّذِينَ هُمْ", bangla: "যারা", color: "#0282D7" },
-        { arabic: "عَنْ", bangla: "সম্বন্ধে", color: "#D60093" },
-        { arabic: "صَلَاتِهِمْ", bangla: "তাদের সালাত", color: "#990000" },
-        { arabic: "سَاهُونَ", bangla: "উদাসীন", color: "#006600" },
+        { arabic: "الَّذِينَ هُمْ", bangla: "যারা", color: "bg-[#0282D7]" },
+        { arabic: "عَنْ", bangla: "সম্বন্ধে", color: "bg-[#D60093]" },
+        { arabic: "صَلَاتِهِمْ", bangla: "তাদের সালাত", color: "bg-[#990000]" },
+        { arabic: "سَاهُونَ", bangla: "উদাসীন", color: "bg-[#006600]" },
      ];
 
   const [selectedFirstWord, setSelectedFirstWord] = useState("");
@@ -34,24 +34,28 @@ const Word1 = () => {
       <View className="flex flex-row">
           <WordToken
             word={words[0].arabic}
+            color={words[0].color}
             handleWordSelection={handleWordSelectionArabic}
             selectedFirstWord={selectedFirstWord}
             selectedSecondWord={selectedSecondWord}
           />
           <WordToken
             word={words[1].arabic}
+            color={words[1].color}
             handleWordSelection={handleWordSelectionArabic}
             selectedFirstWord={selectedFirstWord}
             selectedSecondWord={selectedSecondWord}
           />
           <WordToken
             word={words[2].arabic}
+            color={words[2].color}
             handleWordSelection={handleWordSelectionArabic}
             selectedFirstWord={selectedFirstWord}
             selectedSecondWord={selectedSecondWord}
           />
           <WordToken
             word={words[3].arabic}
+            color={words[3].color}
             handleWordSelection={handleWordSelectionArabic}
             selectedFirstWord={selectedFirstWord}
             selectedSecondWord={selectedSecondWord}
@@ -61,24 +65,28 @@ const Word1 = () => {
       <View className="flex flex-row">
       <WordToken
             word={words[0].bangla}
+            color={words[0].color}
             handleWordSelection={handleWordSelectionBangla}
             selectedFirstWord={selectedFirstWord}
             selectedSecondWord={selectedSecondWord}
           />
           <WordToken
             word={words[2].bangla}
+            color={words[2].color}
             handleWordSelection={handleWordSelectionBangla}
             selectedFirstWord={selectedFirstWord}
             selectedSecondWord={selectedSecondWord}
           />
           <WordToken
             word={words[1].bangla}
+            color={words[1].color}
             handleWordSelection={handleWordSelectionBangla}
             selectedFirstWord={selectedFirstWord}
             selectedSecondWord={selectedSecondWord}
           />
           <WordToken
             word={words[3].bangla}
+            color={words[3].color}
             handleWordSelection={handleWordSelectionBangla}
             selectedFirstWord={selectedFirstWord}
             selectedSecondWord={selectedSecondWord}
@@ -93,6 +101,7 @@ const Word1 = () => {
 
 const WordToken = ({
   word,
+  color,
   handleWordSelection,
   selectedFirstWord,
   selectedSecondWord,
@@ -100,14 +109,14 @@ const WordToken = ({
   return (
     <TouchableOpacity
   key={word}
-  className={`${
-    selectedFirstWord === word || selectedSecondWord === word
-      ? "bg-[#033D6C]"
-      : "bg-[#53AF32]"
-  } p-4 mb-4 mr-3 rounded-lg`}
+  className={`${color} p-4 mb-4 mr-3 rounded-lg`}
   onPress={() => handleWordSelection(word)}
 >
-  <Text>{word}</Text>
+  <Text  className={`${
+    selectedFirstWord === word || selectedSecondWord === word
+      ? "text-white font-bold"
+      : "text-black"
+  }`}>{word}</Text>
 </TouchableOpacity>
   );
 };
