@@ -3,24 +3,24 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
 
 
-const Question3 = () => {
+const Choice1 = () => {
   const navigation = useNavigation();
 
   const words = 
-  [
-    { arabic: "الْحَمْدُ", bangla: "সকল প্রশংসা", color: "bg-[#0282D7]" },
-    { arabic: "لِلَّهِ", bangla: "আল্লাহরই", color: "bg-[#D60093]" },
-    { arabic: "رَبِّ", bangla: "প্রতিপালক", color: "bg-[#990000]" },
-    { arabic: "الْعَالَمِين", bangla: "জগতসমূহের", color: "bg-[#006600]" },
-  ];
-
-  const finalWords =  
-  [
-    { arabic: "الْحَمْدُ", bangla: "সকল প্রশংসা", color: "bg-[#0282D7]" },
-    { arabic: "لِلَّهِ", bangla: "আল্লাহরই", color: "bg-[#D60093]" },
-    { arabic: "رَبِّ", bangla: "প্রতিপালক", color: "bg-[#990000]" },
-    { arabic: "الْعَالَمِين", bangla: "জগতসমূহের", color: "bg-[#006600]" },
-  ];
+    [
+      { arabic: "خَلَقَ", bangla: "সৃষ্টি করেছেন", color: "#0282D7" },
+      { arabic: "الْإِنْسَانَ", bangla: "মানুষকে", color: "#D60093" },
+      { arabic: "مِنْ", bangla: "হতে", color: "#990000" },
+      { arabic: "عَلَقٍ", bangla: "আলাক", color: "#006600" },
+      { arabic: "الَّذِينَ هُمْ", bangla: "যারা", color: "#0282D7" },
+      { arabic: "عَنْ", bangla: "সম্বন্ধে", color: "#D60093" },
+      { arabic: "صَلَاتِهِمْ", bangla: "তাদের সালাত", color: "#990000" },
+      { arabic: "سَاهُونَ", bangla: "উদাসীন", color: "#006600" },
+      { arabic: "الْحَمْدُ", bangla: "সকল প্রশংসা", color: "bg-[#0282D7]" },
+      { arabic: "لِلَّهِ", bangla: "আল্লাহরই", color: "bg-[#D60093]" },
+      { arabic: "رَبِّ", bangla: "প্রতিপালক", color: "bg-[#990000]" },
+      { arabic: "الْعَالَمِين", bangla: "জগতসমূহের", color: "bg-[#006600]" },
+   ];
 
   const [wordNo, setWordNo] = useState(0);
   const [selectedFirstWord, setSelectedFirstWord] = useState(finalWords[0].arabic);
@@ -54,7 +54,7 @@ console.log(selectedFirstWord);
   };
   return (
     <View>
-      <Text className="text-xl my-5">শব্দ বাছাই ৩</Text>
+      <Text className="text-xl my-5">শব্দ বাছাই ১</Text>
       <View className="flex flex-row">
       
       {finalWords.map((word) => (
@@ -84,17 +84,17 @@ console.log(selectedFirstWord);
         <View>
           <TouchableOpacity
             className="text-5xl"
-            onPress={() => navigation.navigate("Choices")}
+            onPress={() => navigation.navigate("Question2")}
           >
-            <Text className="text-xl text-orange-500"> হোম {"->"} </Text>
+            <Text className="text-xl text-orange-500"> পরবর্তী {"->"} </Text>
           </TouchableOpacity>
         </View>
         <View>
           <TouchableOpacity
             className="text-5xl"
-            onPress={() => navigation.navigate("Question2")}
+            onPress={() => navigation.navigate("Home")}
           >
-            <Text className="text-xl text-orange-500">{"<-"} পূর্ববর্তী</Text>
+            <Text className="text-xl text-orange-500">{"<-"} হোম </Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -130,4 +130,4 @@ const WordToken = ({
 
 
 
-export default Question3;
+export default Choice1;

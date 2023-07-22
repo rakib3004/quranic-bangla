@@ -1,77 +1,56 @@
-import React from "react";
-import {
-  ScrollView,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { useNavigation } from '@react-navigation/native';
+import React, { useLayoutEffect } from 'react';
+import { Image, Text, View } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 const Display = () => {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.titleText}>Quranic Bangla</Text>
-      <ScrollView contentContainerStyle={styles.scrollContainer}>
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>আয়াতুল কুরসি</Text>
-        </TouchableOpacity>
+  const navigation = useNavigation();
+  useLayoutEffect(() => {
+        navigation.setOptions({
+            headerShown: false,
+        }, [])
+    });
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>সুরা ফাতিহা</Text>
-        </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>সুরা ইখলাস</Text>
-        </TouchableOpacity>
+    const cardItems = [
+      { name: 'Words', image: require('../public/quran-holder.png') },
+      { name: 'Questions', image: require('../public/gradiant-quran-holder.png') },
+      { name: 'Choices', image: require('../public/al-quran-preview.png') },
+      { name: 'Matching', image: require('../public/light.png') },
+    ];
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>সুরা আসর </Text>
-        </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>সুরা বাকারার ১ম পাঁচ আয়াত</Text>
-        </TouchableOpacity>
-      </ScrollView>
+return (
+  <View className="flex-1 p-4">
+  <Text className="text-3xl justify-center flex-1 text-center pt-12 ">Quranic Bangla</Text>
+
+    <View className="flex-row mb-4">
+    
+      <CardItem item={cardItems[0]} />
+      <CardItem item={cardItems[1]} />
     </View>
-  );
+    <View className="flex-row mb-4">
+      <CardItem item={cardItems[2]} />
+      <CardItem item={cardItems[3]} />
+    </View>
+  </View>  );
+};
+
+const CardItem = ({ item }) => {
+ 
+  const navigation = useNavigation();
+  const itemName  =  item.name;
+  const screenName = itemName.replace(/\s/g, '');
+
+return(
+    <TouchableOpacity onPress={() => navigation.navigate(screenName)}>
+      <View className="w-40 h-48  p-4 bg-gray-600  border-1 mr-4 justify-center ">
+    <Image source={item.image} className="w-10 h-10 object-cover justify-center rounded-lg" /> 
+    <Text className="text-xl text-white font-bold">{item.name}</Text>
+  </View>
+    </TouchableOpacity>
+);
+
 };
 
 export default Display;
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  scrollContainer: {
-    alignItems: "center",
-  },
-  button: {
-    width: "100%",
-    height: 220,
-    backgroundColor: "#088395",
-    justifyContent: "center",
-    alignItems: "center",
-    marginBottom: 10,
-    borderRadius: "0.5rem",
-    width: 500,
-  },
-  buttonText: {
-    color: "white",
-    fontSize: 16,
-    display: "flex",
-    alignContent: "center",
-    textAlign: "center",
-  },
-  buttonImage: {
-    width: "100%",
-    height: "100%",
-    resizeMode: "cover",
-  },
-  titleText: {
-    justifyContent: "center",
-    alignItems: "center",
-    marginLeft: 500,
-    fontSize: 35,
-    marginBottom: 50,
-  },
-});

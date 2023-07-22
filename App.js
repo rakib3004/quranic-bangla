@@ -16,6 +16,7 @@ import Word3 from './screens/words/Word3';
 import Question1 from './screens/questions/Question1';
 import Question2 from './screens/questions/Question2';
 import Question3 from './screens/questions/Question3';
+import Choices from './screens/choices/Choices';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,8 @@ return (
         <Stack.Screen name="Question1" component={Question1} />
         <Stack.Screen name="Question2" component={Question2} />
         <Stack.Screen name="Question3" component={Question3} />
+        <Stack.Screen name="Choices" component={Choices} />
+
        
       </Stack.Navigator>
   </NavigationContainer>

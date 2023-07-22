@@ -6,13 +6,13 @@ import Word3 from "../words/Word3";
 import Question1 from "../questions/Question1";
 import { useNavigation } from "@react-navigation/native";
 
-const Level1 = () => {
+const Words = () => {
   const navigation = useNavigation();
 
   return (
     <View>
     
-      {/* <Word1 />
+      <Word1 />
       <Word2 />
       <Word3 />
       <View className="flex flex-row justify-between">
@@ -32,10 +32,10 @@ const Level1 = () => {
             <Text className="text-xl text-orange-500">{"<-"} হোম </Text>
           </TouchableOpacity>
         </View>
-      </View> */}
+      </View>
       {/* <Question1/> */}
     </View>
   );
 };
 
-export default Level1;
+export default Words;
