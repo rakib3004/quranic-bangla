@@ -1,21 +1,16 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
+import { Text, TouchableOpacity, View } from "react-native";
 import Word1 from "../words/Word1";
 import Word2 from "../words/Word2";
 import Word3 from "../words/Word3";
-import Question1 from "../questions/Question1";
-import { useNavigation } from "@react-navigation/native";
 
 const Words = () => {
   const navigation = useNavigation();
 
   return (
     <View>
-    
-      <Word1 />
-      <Word2 />
-      <Word3 />
-      <View className="flex flex-row justify-between">
+    <View className="flex flex-row justify-between">
         <View>
           <TouchableOpacity
             className="text-5xl"
@@ -27,13 +22,16 @@ const Words = () => {
         <View>
           <TouchableOpacity
             className="text-5xl"
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("Display")}
           >
-            <Text className="text-xl text-orange-500">{"<-"} হোম </Text>
+            <Text className="text-xl text-orange-500">{"<-"} মেন্যু </Text>
           </TouchableOpacity>
         </View>
       </View>
-      {/* <Question1/> */}
+      <Word1 />
+      <Word2 />
+      <Word3 />
+      
     </View>
   );
 };

@@ -1,21 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, View } from 'react-native';
 
-const words = 
-[
-  { arabic: "خَلَقَ", bangla: "সৃষ্টি করেছেন", color: "#0282D7" },
-  { arabic: "الْإِنْسَانَ", bangla: "মানুষকে", color: "#D60093" },
-  { arabic: "مِنْ", bangla: "হতে", color: "#990000" },
-  { arabic: "عَلَقٍ", bangla: "আলাক", color: "#006600" },
-  { arabic: "الَّذِينَ هُمْ", bangla: "যারা", color: "#0282D7" },
-  { arabic: "عَنْ", bangla: "সম্বন্ধে", color: "#D60093" },
-  { arabic: "صَلَاتِهِمْ", bangla: "তাদের সালাত", color: "#990000" },
-  { arabic: "سَاهُونَ", bangla: "উদাসীন", color: "#006600" },
-  { arabic: "الْحَمْدُ", bangla: "সকল প্রশংসা", color: "bg-[#0282D7]" },
-  { arabic: "لِلَّهِ", bangla: "আল্লাহরই", color: "bg-[#D60093]" },
-  { arabic: "رَبِّ", bangla: "প্রতিপালক", color: "bg-[#990000]" },
-  { arabic: "الْعَالَمِين", bangla: "জগতসমূহের", color: "bg-[#006600]" },
-];
 
 const questions = [
   {
@@ -47,15 +32,9 @@ const Choices = () => {
     } else {
       setTotalWrong(totalWrong + 1);
     }
-
-    if (currentQuestionIndex === questions.length - 1) {
-     
-      setCurrentQuestionIndex(0);
-      setTotalCorrect(0);
-      setTotalWrong(0);
-    } else {
+  
       setCurrentQuestionIndex(currentQuestionIndex + 1);
-    }
+
   };
 
   return (
@@ -87,6 +66,25 @@ const Choices = () => {
           All questions answered. Quiz completed!
         </Text>
       )}
+
+      <View className="flex flex-row justify-between">
+        <View>
+          <TouchableOpacity
+            className="text-5xl"
+            onPress={() => navigation.navigate("Home")}
+          >
+            <Text className="text-xl text-orange-500"> পরবর্তী {"->"} </Text>
+          </TouchableOpacity>
+        </View>
+        <View>
+          <TouchableOpacity
+            className="text-5xl"
+            onPress={() => navigation.navigate("Display")}
+          >
+            <Text className="text-xl text-orange-500">{"<-"} মেন্যু</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };

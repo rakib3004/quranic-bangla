@@ -1,18 +1,13 @@
-import React, { useState } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
 import { useNavigation } from '@react-navigation/native';
+import React, { useState } from "react";
+import { Text, TouchableOpacity, View } from "react-native";
 
 
 const Question1 = () => {
   const navigation = useNavigation();
 
   const words = 
-    //  [
-    //     { arabic: "الَّذِينَ هُمْ", bangla: "যারা", color: "#0282D7" },
-    //     { arabic: "عَنْ", bangla: "সম্বন্ধে", color: "#D60093" },
-    //     { arabic: "صَلَاتِهِمْ", bangla: "তাদের সালাত", color: "#990000" },
-    //     { arabic: "سَاهُونَ", bangla: "উদাসীন", color: "#006600" },
-    //  ];
+  
     [
       { arabic: "خَلَقَ", bangla: "সৃষ্টি করেছেন", color: "#0282D7" },
       { arabic: "الْإِنْسَانَ", bangla: "মানুষকে", color: "#D60093" },
@@ -27,12 +22,7 @@ const Question1 = () => {
     { arabic: "مِنْ", bangla: "হতে", color: "#990000" },
     { arabic: "عَلَقٍ", bangla: "আলাক", color: "#006600" },
  ];
-// [
-//   { arabic: "الَّذِينَ هُمْ", bangla: "যারা", color: "#0282D7" },
-//   { arabic: "عَنْ", bangla: "সম্বন্ধে", color: "#D60093" },
-//   { arabic: "صَلَاتِهِمْ", bangla: "তাদের সালাত", color: "#990000" },
-//   { arabic: "سَاهُونَ", bangla: "উদাসীন", color: "#006600" },
-// ];
+
 
   const [wordNo, setWordNo] = useState(0);
   const [selectedFirstWord, setSelectedFirstWord] = useState(finalWords[0].arabic);
@@ -104,9 +94,9 @@ console.log(selectedFirstWord);
         <View>
           <TouchableOpacity
             className="text-5xl"
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("Display")}
           >
-            <Text className="text-xl text-orange-500">{"<-"} হোম </Text>
+            <Text className="text-xl text-orange-500">{"<-"} মেন্যু</Text>
           </TouchableOpacity>
         </View>
       </View>

@@ -13,20 +13,9 @@ const Question2 = () => {
         { arabic: "صَلَاتِهِمْ", bangla: "তাদের সালাত", color: "#990000" },
         { arabic: "سَاهُونَ", bangla: "উদাসীন", color: "#006600" },
      ];
-//     [
-//       { arabic: "خَلَقَ", bangla: "সৃষ্টি করেছেন", color: "#0282D7" },
-//       { arabic: "الْإِنْسَانَ", bangla: "মানুষকে", color: "#D60093" },
-//       { arabic: "مِنْ", bangla: "হতে", color: "#990000" },
-//       { arabic: "عَلَقٍ", bangla: "আলাক", color: "#006600" },
-//    ];
+
 
   const finalWords =  
-//   [
-//     { arabic: "خَلَقَ", bangla: "সৃষ্টি করেছেন", color: "#0282D7" },
-//     { arabic: "الْإِنْسَانَ", bangla: "মানুষকে", color: "#D60093" },
-//     { arabic: "مِنْ", bangla: "হতে", color: "#990000" },
-//     { arabic: "عَلَقٍ", bangla: "আলাক", color: "#006600" },
-//  ];
 [
   { arabic: "الَّذِينَ هُمْ", bangla: "যারা", color: "#0282D7" },
   { arabic: "عَنْ", bangla: "সম্বন্ধে", color: "#D60093" },

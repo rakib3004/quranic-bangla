@@ -17,6 +17,8 @@ import Question1 from './screens/questions/Question1';
 import Question2 from './screens/questions/Question2';
 import Question3 from './screens/questions/Question3';
 import Choices from './screens/choices/Choices';
+import Display from './app/Display';
+import Words from './screens/words/Words';
 
 const Stack = createNativeStackNavigator();
 
@@ -27,6 +29,8 @@ return (
   <NavigationContainer>
   <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Display" component={Display} />
+        <Stack.Screen name="Words" component={Words} />
         <Stack.Screen name="Level1" component={Level1} />
         <Stack.Screen name="Level2" component={Level2} />
         <Stack.Screen name="Level3" component={Level3} />

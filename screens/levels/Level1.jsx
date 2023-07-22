@@ -5,13 +5,15 @@ import Word2 from "../words/Word2";
 import Word3 from "../words/Word3";
 import Question1 from "../questions/Question1";
 import { useNavigation } from "@react-navigation/native";
+import Display from "../../app/Display";
 
 const Level1 = () => {
   const navigation = useNavigation();
 
   return (
     <View>
-    
+    <Display/>
+
       {/* <Word1 />
       <Word2 />
       <Word3 />
