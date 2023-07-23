@@ -39,7 +39,6 @@ const Question1 = () => {
   const tempWords = words;
   const shuffledWords = shuffleArray(tempWords);
 
-console.log(selectedFirstWord);
   const handleWordSelectionBangla = (banglaWord) => {
     const selected = banglaWord===selectedFirstWordBangla;
     if (selected) {
@@ -50,6 +49,7 @@ console.log(selectedFirstWord);
       setSelectedFirstWord(finalWords[wordNo+1].arabic);
       setSelectedFirstWordBangla(finalWords[wordNo+1].bangla);
     }
+
   };
   const handleWordSelectionArabic = (arabicWord) => {
   

@@ -16,7 +16,7 @@ const Display = () => {
       { name: 'Words', image: require('../public/quran-holder.png') },
       { name: 'Question1', image: require('../public/gradiant-quran-holder.png') },
       { name: 'Choices', image: require('../public/al-quran-preview.png') },
-      { name: 'Matching', image: require('../public/light.png') },
+      { name: 'Dashboard', image: require('../public/light.png') },
     ];
 
 
