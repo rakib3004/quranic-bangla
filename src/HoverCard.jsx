@@ -10,7 +10,7 @@ const HoverCard = ({ word, definition }) => {
       ));
   return (
     <div className="p-6 shadow-2xl absolute z-50 bg-cyan-700">
-      <h2 className="text-7xl font-bold mb-8 text-white">{word}</h2>
+      <h2 className="text-5xl font-bold mb-8 text-white">{word}</h2>
       <p className='w-28'>{formattedDefinition}</p>
     </div>
   );
