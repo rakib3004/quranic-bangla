@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/rakib3004/quranic-bangla",
+  "homepage": "<https://rakib3004.github.io/quranic-bangla>",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
