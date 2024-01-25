@@ -14,8 +14,8 @@ const Lines = ({ ayah, number }) => {
   };
 
   return (
-    <div className="relative flex flex-row mt-16 ml-24">
-      <h1 className="font-bold text-2xl text-teal-700">{number}</h1>
+    <div className="relative flex flex-row mt-16 ml-24  filter sepia">
+      <h1 className="font-bold text-2xl text-teal-700  filter sepia">{number}</h1>
 
       {ayah.slice().reverse().map((item, index) => (
         <div key={index}>
