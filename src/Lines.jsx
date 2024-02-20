@@ -32,16 +32,15 @@ const Lines =({ayah, number})=> {
           >
             {item.word}
           </p>
-          {/* <ul>
-            {item.definition.map((definitionItem, definitionIndex) => (
-              <li key={definitionIndex}>{definitionItem}</li>
-            ))}
-          </ul> */}
+          {/* <span className="tooltip">
+              {item.word}
+              {hoveredWord === item && (
+                <span className="tooltiptext">{item.definition}</span>
+              )}
+            </span> */}
         </div>
       ))}   
-         {hoveredWord && <HoverCard word={hoveredWord.word} definition={hoveredWord.definition} />}
-
-    
+         {hoveredWord && <HoverCard word={hoveredWord.word} definition={hoveredWord.definition} />}    
     </div>
   )
 }
